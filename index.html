@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="petName"></label>
+            <input type="text" id="PetName" required>
+        </div>
+        <div>
+            <label for="ownerName"></label>
+            <input type="text" id="ownerName" required>
+        </div>
+        <div>
+            <label for="species"></label>
+            <input type="text" id="species" required>
+        </div>
+        <div>
+            <label for="breed"></label>
+            <input type="text" id="breed" required>
+        </div>
+
+        <button type="submit">Send</button>
+    </form>
+
+
+    <h3>Pets List</h3>
+    <div id="PetsList"></div>
+    <script>
+        const form = document.querySelector("form")
+
+        form.onsubmit = function (e) {
+
+            // importantissimo il preventDefault per evitare il refresh della pagina!
+            e.preventDefault()
+
+            // sotto ad esso possiamo creare la nostra logica
+
+            console.log("Submit")
+            form.reset() // eventualmente alla fine possiamo resettare i campi
+        }
+
+        // metodo alternativo per l'applicazione dell'evento submit
+        // form.addEventListener("submit", function(){}) 
+    </script>
+    
+    <script src="./D11.js"></script>
+</body>
+</html>
